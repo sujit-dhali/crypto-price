@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+<title>Cryptocurrency Price</title>
+<!-- CSS stylesheet-->
+<style>
+input, select {
+	width: 200px;
+	height: 25px;
+	margin: 2px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+	<form action="getcryptoprice" method="get">
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="crypto-ops">Cryptocurrency</label></td>
+					<td><select name="crypto" id="crypto">
+							<option value="Bitcoin">Bitcoin</option>
+							<option value="Ethereum">Ethereum</option>
+							<option value="Tether">Tether</option>
+							<option value="BNB">BNB</option>
+							<option value="USD Coin">USD Coin</option>
+							<option value="XRP">XRP</option>
+							<option value="Solana">Solana</option>
+							<option value="Terra">Terra</option>
+							<option value="Cardano">Cardano</option>
+							<option value="TerraUSD">TerraUSD</option>
+							<option value="Binance USD">Binance USD</option>
+							<option value="Dogecoin">Dogecoin</option>
+							<option value="Polkadot">Polkadot</option>
+							<option value="Avalanche">Avalanche</option>
+							<option value="Shiba Inu">Shiba Inu</option>
+							<option value="Wrapped Bitcoin">Wrapped Bitcoin</option>
+							<option value="Lido Staked Ether">Lido Staked Ether</option>
+							<option value="Dai">Dai</option>
+							<option value="NEAR Protocol">NEAR Protocol</option>
+							<option value="Polygon">Polygon</option>
+							<option value="Litecoin">Litecoin</option>
+							<option value="Bonded Luna">Bonded Luna</option>
+							<option value="Cronos">Cronos</option>
+							<option value="TRON">TRON</option>
+							<option value="Bitcoin Cash">Bitcoin Cash</option>
+							<option value="FTX Token">FTX Token</option>
+							<option value="LEO Token">LEO Token</option>
+							<option value="Cosmos Hub">Cosmos Hub</option>
+							<option value="Chainlink">Chainlink</option>
+							<option value="OKB">OKB</option>
+							<option value="Stellar">Stellar</option>
+							<option value="ApeCoin">ApeCoin</option>
+							<option value="Algorand">Algorand</option>
+							<option value="Monero">Monero</option>
+							<option value="Ethereum Classic">Ethereum Classic</option>
+							<option value="VeChain">VeChain</option>
+							<option value="Uniswap">Uniswap</option>
+							<option value="Filecoin">Filecoin</option>
+							<option value="Internet Computer">Internet Computer</option>
+							<option value="Magic Internet Money">Magic Internet
+								Money</option>
+							<option value="Elrond">Elrond</option>
+							<option value="Hedera">Hedera</option>
+							<option value="cETH">cETH</option>
+							<option value="Frax">Frax</option>
+							<option value="The Sandbox">The Sandbox</option>
+							<option value="Axie Infinity">Axie Infinity</option>
+							<option value="Theta Network">Theta Network</option>
+							<option value="PancakeSwap">PancakeSwap</option>
+							<option value="DeFiChain">DeFiChain</option>
+							<option value="Decentraland">Decentraland</option>
+							<option value="Tezos">Tezos</option>
+							<option value="The Graph">The Graph</option>
+							<option value="EOS">EOS</option>
+							<option value="STEPN">STEPN</option>
+							<option value="Klaytn">Klaytn</option>
+							<option value="Aave">Aave</option>
+							<option value="Theta Fuel">Theta Fuel</option>
+							<option value="Fantom">Fantom</option>
+							<option value="THORChain">THORChain</option>
+							<option value="KuCoin Token">KuCoin Token</option>
+							<option value="Flow">Flow</option>
+							<option value="BitTorrent">BitTorrent</option>
+							<option value="cUSDC">cUSDC</option>
+							<option value="Huobi BTC">Huobi BTC</option>
+							<option value="Huobi Token">Huobi Token</option>
+							<option value="Zcash">Zcash</option>
+							<option value="IOTA">IOTA</option>
+							<option value="Bitcoin SV">Bitcoin SV</option>
+							<option value="Helium">Helium</option>
+							<option value="Chain">Chain</option>
+							<option value="TrueUSD">TrueUSD</option>
+							<option value="eCash">eCash</option>
+							<option value="cDAI">cDAI</option>
+							<option value="Frax Share">Frax Share</option>
+							<option value="Convex Finance">Convex Finance</option>
+							<option value="Osmosis">Osmosis</option>
+							<option value="Maker">Maker</option>
+							<option value="Quant">Quant</option>
+							<option value="Waves">Waves</option>
+							<option value="NEXO">NEXO</option>
+							<option value="NEO">NEO</option>
+							<option value="Arweave">Arweave</option>
+							<option value="Kusama">Kusama</option>
+							<option value="Radix">Radix</option>
+							<option value="BitDAO">BitDAO</option>
+							<option value="Celo">Celo</option>
+							<option value="Pax Dollar">Pax Dollar</option>
+							<option value="Gala">Gala</option>
+							<option value="Synthetix Network Token">Synthetix
+								Network Token</option>
+							<option value="Zilliqa">Zilliqa</option>
+							<option value="Stacks">Stacks</option>
+							<option value="Enjin Coin">Enjin Coin</option>
+							<option value="GateToken">GateToken</option>
+							<option value="Harmony">Harmony</option>
+							<option value="Neutrino USD">Neutrino USD</option>
+							<option value="Dash">Dash</option>
+							<option value="Chiliz">Chiliz</option>
+							<option value="Lido DAO">Lido DAO</option>
+							<option value="Amp">Amp</option>
+							<option value="Celsius Network">Celsius Network</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="ipaddress">IP Address</label></td>
+					<td><input type="text" name="ipaddress"></input></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Get Price"></input></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

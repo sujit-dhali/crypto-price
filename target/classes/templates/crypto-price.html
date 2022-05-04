@@ -1,0 +1,21 @@
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<title>Cryptocurrency Price</title>
+</head>
+<body>
+	<div align="center">
+		<table>
+			<tr>
+				<td><h4>Cryptocurrency :</h4></td>
+				<td></td>
+				<td><h3 th:text="${cryptodata.crypto}"></h3></td>
+			</tr>
+			<tr>
+				<td><h4>Current unit price is:</h4></td>
+				<td></td>
+				<td><h3 th:text="${cryptodata.price}"></h3></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
