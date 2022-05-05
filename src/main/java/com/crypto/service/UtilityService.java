@@ -48,7 +48,9 @@ public class UtilityService {
 		} catch (Exception e) {
 			currencyName = USD;
 		}
-		return currencyName.equalsIgnoreCase("Rs.")?INR:currencyName;
+		currencyName = currencyName.equalsIgnoreCase("Rs.")?INR:currencyName;
+		currencyName = currencyName.equalsIgnoreCase(DOLLAR)?USD:currencyName;
+		return currencyName;
 	}
 
 	public String getCurrencySymbol(String countryCode) {
