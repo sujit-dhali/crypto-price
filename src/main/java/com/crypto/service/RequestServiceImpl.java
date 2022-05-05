@@ -13,6 +13,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Request Service implementation to get crytocurrency information.
+ * 
+ * @author Sujit Dhali
+ *
+ */
 @Service
 public class RequestServiceImpl implements RequestService {
 
@@ -32,6 +38,9 @@ public class RequestServiceImpl implements RequestService {
 	@Autowired
 	private UtilityService utilityService;
 
+	/* (non-Javadoc)
+	 * @see com.crypto.service.RequestService#getCryptoCurrentPrice(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)
+	 */
 	@Override
 	public String getCryptoCurrentPrice(HttpServletRequest request, String cryptoName, String ipAddress) {
 		String price = null;
@@ -82,13 +91,24 @@ public class RequestServiceImpl implements RequestService {
 		return (new StringBuffer(currencySymbol).append(price)).toString();
 	}
 
+	/**
+	 * Get cryptocurrency price by calling open API using specific currency
+	 * 
+	 * @param currency
+	 * @return String
+	 */
 	public String getCryptoInformation(String currency) {
-		System.out.println(">>>>>> "+currency);
 		ResponseEntity<String> cryptoDetails = restTemplate.getForEntity(
 				"https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + currency.toLowerCase(), String.class);
 		return cryptoDetails.getBody();
 	}
 
+	/**
+	 * Get localized information by calling open API using ip address
+	 * 
+	 * @param ipAddress
+	 * @return Map<String, Object>
+	 */
 	public Map<String, Object> getLocaleInfo(String ipAddress) {
 		ResponseEntity<String> localeInfo = restTemplate.getForEntity("https://www.iplocate.io/api/lookup/" + ipAddress,
 				String.class);

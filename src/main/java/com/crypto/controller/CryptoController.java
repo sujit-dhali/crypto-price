@@ -12,6 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.crypto.model.CryptoData;
 import com.crypto.service.RequestService;
 
+/**
+ * Controller class to get cryptocurrency information
+ * 
+ * @author Sujit Dhali
+ *
+ */
 @Controller
 public class CryptoController {
 	@RequestMapping("/")
@@ -19,6 +25,13 @@ public class CryptoController {
 		return "crypto-start";
 	}
 
+	/**
+	 * Controller class to get the cryptocurrency price information
+	 * 
+	 * @param cryptodata
+	 * @param request
+	 * @return ModelAndView Crypto price information screen
+	 */
 	@RequestMapping(value = "/getcryptoprice", method = RequestMethod.GET)
 	public ModelAndView getCryptoPrice(@ModelAttribute CryptoData cryptodata, HttpServletRequest request) {
 		String crypto = cryptodata.getCrypto();

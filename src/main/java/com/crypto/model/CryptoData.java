@@ -1,5 +1,11 @@
 package com.crypto.model;
 
+/**
+ * Model class holding cryptocurrency and price information
+ * 
+ * @author Sujit Dhali
+ *
+ */
 public class CryptoData {
 	String crypto;
 	String ipaddress;
